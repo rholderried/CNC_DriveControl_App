@@ -45,20 +45,37 @@
 /**
   Section: Included Files
 */
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
 #include "system.h"
 #include "SCI.h"
+#include "DataAndControl.h"
+#include "uart1.h"
+
+//extern VAR varStruct[];
 
 /*
                          Main application
  */
 int main(void)
 {
+    
     // initialize the device
     SYSTEM_Initialize();
+
+    {
+      SCI_CALLBACKS cbs = {NULL, NULL, UART1_writeBlocking, NULL, NULL};
+
+      // Initialize the Serial Communication Interface
+      SCI_init(cbs, &varStruct[0], &cmdStruct[0]);
+    }
+
     
     while (1)
     {
-        // Add your application code
+      // Call the SCI state machine
+      SCI_statemachine();
     }
     return 1; 
 }

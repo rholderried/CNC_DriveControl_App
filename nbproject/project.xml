@@ -13,8 +13,8 @@
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>src/system</sourceRootElem>
                 <sourceRootElem>submodules/SCI</sourceRootElem>
+                <sourceRootElem>src</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

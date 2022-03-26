@@ -30,7 +30,7 @@ static UART1_t uart1Data = UART1_t_DEFAULT;
  * clock frequency has to be known.
  ***********************************************************************************/
 
-void UART1_Initialize8N1(uint32_t ui32_baudrate, uint32_t ui32_Fosc, bool b_halfduplex)
+void UART1_initialize8N1(uint32_t ui32_baudrate, uint32_t ui32_Fosc, bool b_halfduplex)
 {
     IEC0bits.U1TXIE = 0;
     IEC0bits.U1RXIE = 0;
@@ -105,17 +105,22 @@ void UART1_setReceiver(RECEIVE_CB targetCB)
 }
 
 //===================================================================================
-// Function: serComUARTSendByte
+// Function: UART1_writeBlocking
 //===================================================================================
 /********************************************************************************//**
  * \brief Sends one byte of data via the UART interface.
  *
- * @param data Data byte to send
+ * @param *pui8_buf Data buffer holding data to be sent
+ * @param ui8_size  Size of the data to be sent
  ***********************************************************************************/
-
-void UART1_Write( uint8_t data)
+void UART1_writeBlocking(uint8_t *pui8_buf, uint8_t ui8_size)
 {
-    while(!U1STAHbits.UTXBE);
-    
-    U1TXREGbits.TXREG = data;
+    while(ui8_size > 0)
+    {
+        while(!U1STAHbits.UTXBE);
+        
+        U1TXREGbits.TXREG = *pui8_buf++;
+
+        ui8_size--;
+    }
 }

@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=src/CNC_DriveControl_App.c submodules/SCI/Buffer.c submodules/SCI/Datalink.c submodules/SCI/Helpers.c submodules/SCI/SCI.c submodules/SCI/SCICommands.c submodules/SCI/VarAccess.c src/system/clock.c src/system/interrupt_manager.c src/system/mcc.c src/system/pin_manager.c src/system/reset.c src/system/system.c src/system/traps.c src/system/uart1.c
+SOURCEFILES_QUOTED_IF_SPACED=submodules/SCI/Buffer.c submodules/SCI/Datalink.c submodules/SCI/Helpers.c submodules/SCI/SCI.c submodules/SCI/SCICommands.c submodules/SCI/VarAccess.c src/system/clock.c src/system/interrupt_manager.c src/system/mcc.c src/system/pin_manager.c src/system/reset.c src/system/system.c src/system/traps.c src/system/uart1.c src/CNC_DriveControl_App.c src/DataAndControl.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/CNC_DriveControl_App.o ${OBJECTDIR}/submodules/SCI/Buffer.o ${OBJECTDIR}/submodules/SCI/Datalink.o ${OBJECTDIR}/submodules/SCI/Helpers.o ${OBJECTDIR}/submodules/SCI/SCI.o ${OBJECTDIR}/submodules/SCI/SCICommands.o ${OBJECTDIR}/submodules/SCI/VarAccess.o ${OBJECTDIR}/src/system/clock.o ${OBJECTDIR}/src/system/interrupt_manager.o ${OBJECTDIR}/src/system/mcc.o ${OBJECTDIR}/src/system/pin_manager.o ${OBJECTDIR}/src/system/reset.o ${OBJECTDIR}/src/system/system.o ${OBJECTDIR}/src/system/traps.o ${OBJECTDIR}/src/system/uart1.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/CNC_DriveControl_App.o.d ${OBJECTDIR}/submodules/SCI/Buffer.o.d ${OBJECTDIR}/submodules/SCI/Datalink.o.d ${OBJECTDIR}/submodules/SCI/Helpers.o.d ${OBJECTDIR}/submodules/SCI/SCI.o.d ${OBJECTDIR}/submodules/SCI/SCICommands.o.d ${OBJECTDIR}/submodules/SCI/VarAccess.o.d ${OBJECTDIR}/src/system/clock.o.d ${OBJECTDIR}/src/system/interrupt_manager.o.d ${OBJECTDIR}/src/system/mcc.o.d ${OBJECTDIR}/src/system/pin_manager.o.d ${OBJECTDIR}/src/system/reset.o.d ${OBJECTDIR}/src/system/system.o.d ${OBJECTDIR}/src/system/traps.o.d ${OBJECTDIR}/src/system/uart1.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/submodules/SCI/Buffer.o ${OBJECTDIR}/submodules/SCI/Datalink.o ${OBJECTDIR}/submodules/SCI/Helpers.o ${OBJECTDIR}/submodules/SCI/SCI.o ${OBJECTDIR}/submodules/SCI/SCICommands.o ${OBJECTDIR}/submodules/SCI/VarAccess.o ${OBJECTDIR}/src/system/clock.o ${OBJECTDIR}/src/system/interrupt_manager.o ${OBJECTDIR}/src/system/mcc.o ${OBJECTDIR}/src/system/pin_manager.o ${OBJECTDIR}/src/system/reset.o ${OBJECTDIR}/src/system/system.o ${OBJECTDIR}/src/system/traps.o ${OBJECTDIR}/src/system/uart1.o ${OBJECTDIR}/src/CNC_DriveControl_App.o ${OBJECTDIR}/src/DataAndControl.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/submodules/SCI/Buffer.o.d ${OBJECTDIR}/submodules/SCI/Datalink.o.d ${OBJECTDIR}/submodules/SCI/Helpers.o.d ${OBJECTDIR}/submodules/SCI/SCI.o.d ${OBJECTDIR}/submodules/SCI/SCICommands.o.d ${OBJECTDIR}/submodules/SCI/VarAccess.o.d ${OBJECTDIR}/src/system/clock.o.d ${OBJECTDIR}/src/system/interrupt_manager.o.d ${OBJECTDIR}/src/system/mcc.o.d ${OBJECTDIR}/src/system/pin_manager.o.d ${OBJECTDIR}/src/system/reset.o.d ${OBJECTDIR}/src/system/system.o.d ${OBJECTDIR}/src/system/traps.o.d ${OBJECTDIR}/src/system/uart1.o.d ${OBJECTDIR}/src/CNC_DriveControl_App.o.d ${OBJECTDIR}/src/DataAndControl.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/CNC_DriveControl_App.o ${OBJECTDIR}/submodules/SCI/Buffer.o ${OBJECTDIR}/submodules/SCI/Datalink.o ${OBJECTDIR}/submodules/SCI/Helpers.o ${OBJECTDIR}/submodules/SCI/SCI.o ${OBJECTDIR}/submodules/SCI/SCICommands.o ${OBJECTDIR}/submodules/SCI/VarAccess.o ${OBJECTDIR}/src/system/clock.o ${OBJECTDIR}/src/system/interrupt_manager.o ${OBJECTDIR}/src/system/mcc.o ${OBJECTDIR}/src/system/pin_manager.o ${OBJECTDIR}/src/system/reset.o ${OBJECTDIR}/src/system/system.o ${OBJECTDIR}/src/system/traps.o ${OBJECTDIR}/src/system/uart1.o
+OBJECTFILES=${OBJECTDIR}/submodules/SCI/Buffer.o ${OBJECTDIR}/submodules/SCI/Datalink.o ${OBJECTDIR}/submodules/SCI/Helpers.o ${OBJECTDIR}/submodules/SCI/SCI.o ${OBJECTDIR}/submodules/SCI/SCICommands.o ${OBJECTDIR}/submodules/SCI/VarAccess.o ${OBJECTDIR}/src/system/clock.o ${OBJECTDIR}/src/system/interrupt_manager.o ${OBJECTDIR}/src/system/mcc.o ${OBJECTDIR}/src/system/pin_manager.o ${OBJECTDIR}/src/system/reset.o ${OBJECTDIR}/src/system/system.o ${OBJECTDIR}/src/system/traps.o ${OBJECTDIR}/src/system/uart1.o ${OBJECTDIR}/src/CNC_DriveControl_App.o ${OBJECTDIR}/src/DataAndControl.o
 
 # Source Files
-SOURCEFILES=src/CNC_DriveControl_App.c submodules/SCI/Buffer.c submodules/SCI/Datalink.c submodules/SCI/Helpers.c submodules/SCI/SCI.c submodules/SCI/SCICommands.c submodules/SCI/VarAccess.c src/system/clock.c src/system/interrupt_manager.c src/system/mcc.c src/system/pin_manager.c src/system/reset.c src/system/system.c src/system/traps.c src/system/uart1.c
+SOURCEFILES=submodules/SCI/Buffer.c submodules/SCI/Datalink.c submodules/SCI/Helpers.c submodules/SCI/SCI.c submodules/SCI/SCICommands.c submodules/SCI/VarAccess.c src/system/clock.c src/system/interrupt_manager.c src/system/mcc.c src/system/pin_manager.c src/system/reset.c src/system/system.c src/system/traps.c src/system/uart1.c src/CNC_DriveControl_App.c src/DataAndControl.c
 
 
 
@@ -95,12 +95,6 @@ MP_LINKER_FILE_OPTION=,--script=p33CH512MP508.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/src/CNC_DriveControl_App.o: src/CNC_DriveControl_App.c  .generated_files/aed1325d53a65adc0eecb14e6bd16bba726a8656.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
-	@${MKDIR} "${OBJECTDIR}/src" 
-	@${RM} ${OBJECTDIR}/src/CNC_DriveControl_App.o.d 
-	@${RM} ${OBJECTDIR}/src/CNC_DriveControl_App.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/CNC_DriveControl_App.c  -o ${OBJECTDIR}/src/CNC_DriveControl_App.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/CNC_DriveControl_App.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
-	
 ${OBJECTDIR}/submodules/SCI/Buffer.o: submodules/SCI/Buffer.c  .generated_files/76db848614be749f62ee70c9d1566ad9cec3de2f.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
 	@${RM} ${OBJECTDIR}/submodules/SCI/Buffer.o.d 
@@ -185,13 +179,19 @@ ${OBJECTDIR}/src/system/uart1.o: src/system/uart1.c  .generated_files/40e9df4616
 	@${RM} ${OBJECTDIR}/src/system/uart1.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/uart1.c  -o ${OBJECTDIR}/src/system/uart1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/uart1.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-else
-${OBJECTDIR}/src/CNC_DriveControl_App.o: src/CNC_DriveControl_App.c  .generated_files/e4d2da1285103ce68278b76fc32bd458d164d3db.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/CNC_DriveControl_App.o: src/CNC_DriveControl_App.c  .generated_files/aed1325d53a65adc0eecb14e6bd16bba726a8656.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src" 
 	@${RM} ${OBJECTDIR}/src/CNC_DriveControl_App.o.d 
 	@${RM} ${OBJECTDIR}/src/CNC_DriveControl_App.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/CNC_DriveControl_App.c  -o ${OBJECTDIR}/src/CNC_DriveControl_App.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/CNC_DriveControl_App.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/CNC_DriveControl_App.c  -o ${OBJECTDIR}/src/CNC_DriveControl_App.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/CNC_DriveControl_App.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/src/DataAndControl.o: src/DataAndControl.c  .generated_files/1da269a22d40b6b0264414df4855efc27c6dad28.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/DataAndControl.o.d 
+	@${RM} ${OBJECTDIR}/src/DataAndControl.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/DataAndControl.c  -o ${OBJECTDIR}/src/DataAndControl.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/DataAndControl.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+else
 ${OBJECTDIR}/submodules/SCI/Buffer.o: submodules/SCI/Buffer.c  .generated_files/f77352edfd328aca73b1afa4ddca1fda94ee1d84.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
 	@${RM} ${OBJECTDIR}/submodules/SCI/Buffer.o.d 
@@ -276,6 +276,18 @@ ${OBJECTDIR}/src/system/uart1.o: src/system/uart1.c  .generated_files/8c205a9c34
 	@${RM} ${OBJECTDIR}/src/system/uart1.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/uart1.c  -o ${OBJECTDIR}/src/system/uart1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/uart1.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/src/CNC_DriveControl_App.o: src/CNC_DriveControl_App.c  .generated_files/e4d2da1285103ce68278b76fc32bd458d164d3db.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/CNC_DriveControl_App.o.d 
+	@${RM} ${OBJECTDIR}/src/CNC_DriveControl_App.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/CNC_DriveControl_App.c  -o ${OBJECTDIR}/src/CNC_DriveControl_App.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/CNC_DriveControl_App.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/src/DataAndControl.o: src/DataAndControl.c  .generated_files/548708ce87228caa8806eaedd93990781fa6028d.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/src" 
+	@${RM} ${OBJECTDIR}/src/DataAndControl.o.d 
+	@${RM} ${OBJECTDIR}/src/DataAndControl.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/DataAndControl.c  -o ${OBJECTDIR}/src/DataAndControl.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/DataAndControl.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
 endif
 
 # ------------------------------------------------------------------------------------
@@ -295,12 +307,12 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -D__DEBUG=__DEBUG   -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI"  -mreserve=data@0x1000:0x101B -mreserve=data@0x101C:0x101D -mreserve=data@0x101E:0x101F -mreserve=data@0x1020:0x1021 -mreserve=data@0x1022:0x1023 -mreserve=data@0x1024:0x1027 -mreserve=data@0x1028:0x104F   -Wl,--local-stack,,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D__DEBUG=__DEBUG,,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST)  -mdfp="${DFP_DIR}/xc16" 
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -D__DEBUG=__DEBUG   -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI"  -mreserve=data@0x1000:0x101B -mreserve=data@0x101C:0x101D -mreserve=data@0x101E:0x101F -mreserve=data@0x1020:0x1021 -mreserve=data@0x1022:0x1023 -mreserve=data@0x1024:0x1027 -mreserve=data@0x1028:0x104F   -Wl,--local-stack,,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D__DEBUG=__DEBUG,,$(MP_LINKER_FILE_OPTION),--heap=512,--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST)  -mdfp="${DFP_DIR}/xc16" 
 	
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -Wl,--local-stack,,--defsym=__MPLAB_BUILD=1,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST)  -mdfp="${DFP_DIR}/xc16" 
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -Wl,--local-stack,,--defsym=__MPLAB_BUILD=1,$(MP_LINKER_FILE_OPTION),--heap=512,--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST)  -mdfp="${DFP_DIR}/xc16" 
 	${MP_CC_DIR}\\xc16-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} -a  -omf=elf   -mdfp="${DFP_DIR}/xc16" 
 	
 endif

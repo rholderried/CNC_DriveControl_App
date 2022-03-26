@@ -216,8 +216,8 @@ void SYSTEM_Initialize(void)
     SYSTEM_CORCONModeOperatingSet(CORCON_MODE_PORVALUES);
 
     // Initialize the UART1 periphery
-    UART1_Initialize8N1(2000000, 180000000, true);
-    UART1_setReceiver(receiveData);
+    UART1_initialize8N1(2000000, 180000000, true);
+    UART1_setReceiver(SCI_receiveData);
 }
 
 /**

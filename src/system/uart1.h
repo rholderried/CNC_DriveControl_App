@@ -39,8 +39,8 @@ typedef struct
 /************************************************************************************
  * Function declarations
  ***********************************************************************************/
-void UART1_Initialize8N1(uint32_t baudrate, uint32_t ui32_Fosc, bool b_halfduplex);
-void UART1_Write( uint8_t data);
+void UART1_initialize8N1(uint32_t baudrate, uint32_t ui32_Fosc, bool b_halfduplex);
+void UART1_writeBlocking(uint8_t *pui8_buf, uint8_t ui8_size);
 void UART1_setReceiver(RECEIVE_CB targetCB);
 
 #ifdef __cplusplus  // Provide C++ Compatibility
