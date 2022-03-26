@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=src/CNC_DriveControl_App.c src/system/clock.c src/system/interrupt_manager.c src/system/mcc.c src/system/pin_manager.c src/system/reset.c src/system/system.c src/system/traps.c
+SOURCEFILES_QUOTED_IF_SPACED=src/CNC_DriveControl_App.c submodules/SCI/Buffer.c submodules/SCI/Datalink.c submodules/SCI/Helpers.c submodules/SCI/SCI.c submodules/SCI/SCICommands.c submodules/SCI/VarAccess.c src/system/clock.c src/system/interrupt_manager.c src/system/mcc.c src/system/pin_manager.c src/system/reset.c src/system/system.c src/system/traps.c src/system/uart1.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/CNC_DriveControl_App.o ${OBJECTDIR}/src/system/clock.o ${OBJECTDIR}/src/system/interrupt_manager.o ${OBJECTDIR}/src/system/mcc.o ${OBJECTDIR}/src/system/pin_manager.o ${OBJECTDIR}/src/system/reset.o ${OBJECTDIR}/src/system/system.o ${OBJECTDIR}/src/system/traps.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/CNC_DriveControl_App.o.d ${OBJECTDIR}/src/system/clock.o.d ${OBJECTDIR}/src/system/interrupt_manager.o.d ${OBJECTDIR}/src/system/mcc.o.d ${OBJECTDIR}/src/system/pin_manager.o.d ${OBJECTDIR}/src/system/reset.o.d ${OBJECTDIR}/src/system/system.o.d ${OBJECTDIR}/src/system/traps.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/CNC_DriveControl_App.o ${OBJECTDIR}/submodules/SCI/Buffer.o ${OBJECTDIR}/submodules/SCI/Datalink.o ${OBJECTDIR}/submodules/SCI/Helpers.o ${OBJECTDIR}/submodules/SCI/SCI.o ${OBJECTDIR}/submodules/SCI/SCICommands.o ${OBJECTDIR}/submodules/SCI/VarAccess.o ${OBJECTDIR}/src/system/clock.o ${OBJECTDIR}/src/system/interrupt_manager.o ${OBJECTDIR}/src/system/mcc.o ${OBJECTDIR}/src/system/pin_manager.o ${OBJECTDIR}/src/system/reset.o ${OBJECTDIR}/src/system/system.o ${OBJECTDIR}/src/system/traps.o ${OBJECTDIR}/src/system/uart1.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/CNC_DriveControl_App.o.d ${OBJECTDIR}/submodules/SCI/Buffer.o.d ${OBJECTDIR}/submodules/SCI/Datalink.o.d ${OBJECTDIR}/submodules/SCI/Helpers.o.d ${OBJECTDIR}/submodules/SCI/SCI.o.d ${OBJECTDIR}/submodules/SCI/SCICommands.o.d ${OBJECTDIR}/submodules/SCI/VarAccess.o.d ${OBJECTDIR}/src/system/clock.o.d ${OBJECTDIR}/src/system/interrupt_manager.o.d ${OBJECTDIR}/src/system/mcc.o.d ${OBJECTDIR}/src/system/pin_manager.o.d ${OBJECTDIR}/src/system/reset.o.d ${OBJECTDIR}/src/system/system.o.d ${OBJECTDIR}/src/system/traps.o.d ${OBJECTDIR}/src/system/uart1.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/CNC_DriveControl_App.o ${OBJECTDIR}/src/system/clock.o ${OBJECTDIR}/src/system/interrupt_manager.o ${OBJECTDIR}/src/system/mcc.o ${OBJECTDIR}/src/system/pin_manager.o ${OBJECTDIR}/src/system/reset.o ${OBJECTDIR}/src/system/system.o ${OBJECTDIR}/src/system/traps.o
+OBJECTFILES=${OBJECTDIR}/src/CNC_DriveControl_App.o ${OBJECTDIR}/submodules/SCI/Buffer.o ${OBJECTDIR}/submodules/SCI/Datalink.o ${OBJECTDIR}/submodules/SCI/Helpers.o ${OBJECTDIR}/submodules/SCI/SCI.o ${OBJECTDIR}/submodules/SCI/SCICommands.o ${OBJECTDIR}/submodules/SCI/VarAccess.o ${OBJECTDIR}/src/system/clock.o ${OBJECTDIR}/src/system/interrupt_manager.o ${OBJECTDIR}/src/system/mcc.o ${OBJECTDIR}/src/system/pin_manager.o ${OBJECTDIR}/src/system/reset.o ${OBJECTDIR}/src/system/system.o ${OBJECTDIR}/src/system/traps.o ${OBJECTDIR}/src/system/uart1.o
 
 # Source Files
-SOURCEFILES=src/CNC_DriveControl_App.c src/system/clock.c src/system/interrupt_manager.c src/system/mcc.c src/system/pin_manager.c src/system/reset.c src/system/system.c src/system/traps.c
+SOURCEFILES=src/CNC_DriveControl_App.c submodules/SCI/Buffer.c submodules/SCI/Datalink.c submodules/SCI/Helpers.c submodules/SCI/SCI.c submodules/SCI/SCICommands.c submodules/SCI/VarAccess.c src/system/clock.c src/system/interrupt_manager.c src/system/mcc.c src/system/pin_manager.c src/system/reset.c src/system/system.c src/system/traps.c src/system/uart1.c
 
 
 
@@ -90,107 +90,191 @@ ifneq ($(INFORMATION_MESSAGE), )
 endif
 	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
-MP_PROCESSOR_OPTION=33CH128MP508
-MP_LINKER_FILE_OPTION=,--script=p33CH128MP508.gld
+MP_PROCESSOR_OPTION=33CH512MP508
+MP_LINKER_FILE_OPTION=,--script=p33CH512MP508.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/src/CNC_DriveControl_App.o: src/CNC_DriveControl_App.c  .generated_files/dd344046d60a886320b45f54af11cf315eba332.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/CNC_DriveControl_App.o: src/CNC_DriveControl_App.c  .generated_files/aed1325d53a65adc0eecb14e6bd16bba726a8656.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src" 
 	@${RM} ${OBJECTDIR}/src/CNC_DriveControl_App.o.d 
 	@${RM} ${OBJECTDIR}/src/CNC_DriveControl_App.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/CNC_DriveControl_App.c  -o ${OBJECTDIR}/src/CNC_DriveControl_App.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/CNC_DriveControl_App.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/CNC_DriveControl_App.c  -o ${OBJECTDIR}/src/CNC_DriveControl_App.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/CNC_DriveControl_App.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/clock.o: src/system/clock.c  .generated_files/b47118fedb0810672f30f4565ef3f92435cfc096.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/submodules/SCI/Buffer.o: submodules/SCI/Buffer.c  .generated_files/76db848614be749f62ee70c9d1566ad9cec3de2f.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Buffer.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Buffer.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/Buffer.c  -o ${OBJECTDIR}/submodules/SCI/Buffer.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/Buffer.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/submodules/SCI/Datalink.o: submodules/SCI/Datalink.c  .generated_files/6ef74eb8459179f0a2957e8c928963896df31325.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Datalink.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Datalink.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/Datalink.c  -o ${OBJECTDIR}/submodules/SCI/Datalink.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/Datalink.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/submodules/SCI/Helpers.o: submodules/SCI/Helpers.c  .generated_files/4acd28abd14b39b1dc20e806535fd7dc0e5d6248.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Helpers.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Helpers.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/Helpers.c  -o ${OBJECTDIR}/submodules/SCI/Helpers.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/Helpers.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/submodules/SCI/SCI.o: submodules/SCI/SCI.c  .generated_files/682ccad667389c9913f07a929cc18523ebc2e6aa.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/SCI.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/SCI.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/SCI.c  -o ${OBJECTDIR}/submodules/SCI/SCI.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/SCI.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/submodules/SCI/SCICommands.o: submodules/SCI/SCICommands.c  .generated_files/4f82a057c828b59ee54c518c3b17695a97c36fbe.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/SCICommands.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/SCICommands.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/SCICommands.c  -o ${OBJECTDIR}/submodules/SCI/SCICommands.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/SCICommands.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/submodules/SCI/VarAccess.o: submodules/SCI/VarAccess.c  .generated_files/df2ac450283787cd5ee7c2ffb8423e6bc0778120.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/VarAccess.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/VarAccess.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/VarAccess.c  -o ${OBJECTDIR}/submodules/SCI/VarAccess.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/VarAccess.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/src/system/clock.o: src/system/clock.c  .generated_files/acc79670c1fc6dbe6fba1ec1363e3e05bc56a38f.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/clock.o.d 
 	@${RM} ${OBJECTDIR}/src/system/clock.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/clock.c  -o ${OBJECTDIR}/src/system/clock.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/clock.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/clock.c  -o ${OBJECTDIR}/src/system/clock.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/clock.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/interrupt_manager.o: src/system/interrupt_manager.c  .generated_files/4d097e8ec8406518ada577880ee867615adba47b.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/interrupt_manager.o: src/system/interrupt_manager.c  .generated_files/7a100b904ba971e1bc85067823a655df7a140c07.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/interrupt_manager.o.d 
 	@${RM} ${OBJECTDIR}/src/system/interrupt_manager.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/interrupt_manager.c  -o ${OBJECTDIR}/src/system/interrupt_manager.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/interrupt_manager.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/interrupt_manager.c  -o ${OBJECTDIR}/src/system/interrupt_manager.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/interrupt_manager.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/mcc.o: src/system/mcc.c  .generated_files/22122352e6cfe479de27ae8fcb3100e4b8b2bb0b.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/mcc.o: src/system/mcc.c  .generated_files/4bf8ffaffec5d076ebc7e9c2e60f512e0012bce4.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/mcc.o.d 
 	@${RM} ${OBJECTDIR}/src/system/mcc.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/mcc.c  -o ${OBJECTDIR}/src/system/mcc.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/mcc.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/mcc.c  -o ${OBJECTDIR}/src/system/mcc.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/mcc.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/pin_manager.o: src/system/pin_manager.c  .generated_files/ab9eb85e0f37ebe993d4236d3ee21cddc13c3027.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/pin_manager.o: src/system/pin_manager.c  .generated_files/2ce04b7e21a9dc4e724e32dace324e908e22f42a.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/pin_manager.o.d 
 	@${RM} ${OBJECTDIR}/src/system/pin_manager.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/pin_manager.c  -o ${OBJECTDIR}/src/system/pin_manager.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/pin_manager.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/pin_manager.c  -o ${OBJECTDIR}/src/system/pin_manager.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/pin_manager.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/reset.o: src/system/reset.c  .generated_files/73ee707079bb84d253f053ecbb270e814e6dd0fd.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/reset.o: src/system/reset.c  .generated_files/b24264e7d8154e0f93c81b338b1b65de07e8abb.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/reset.o.d 
 	@${RM} ${OBJECTDIR}/src/system/reset.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/reset.c  -o ${OBJECTDIR}/src/system/reset.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/reset.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/reset.c  -o ${OBJECTDIR}/src/system/reset.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/reset.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/system.o: src/system/system.c  .generated_files/1d641584d02870021501e4a3fa48ae556bb58802.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/system.o: src/system/system.c  .generated_files/9f1cce20d63d37f79fe3d61e2c9c576d0389814f.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/system.o.d 
 	@${RM} ${OBJECTDIR}/src/system/system.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/system.c  -o ${OBJECTDIR}/src/system/system.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/system.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/system.c  -o ${OBJECTDIR}/src/system/system.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/system.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/traps.o: src/system/traps.c  .generated_files/c117faaf99f15fc1409cfa6873976103b80e2fbd.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/traps.o: src/system/traps.c  .generated_files/be3f20b836f5d301879d011b7a24baf77f193885.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/traps.o.d 
 	@${RM} ${OBJECTDIR}/src/system/traps.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/traps.c  -o ${OBJECTDIR}/src/system/traps.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/traps.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/traps.c  -o ${OBJECTDIR}/src/system/traps.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/traps.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/src/system/uart1.o: src/system/uart1.c  .generated_files/40e9df4616b4551a2eb131a39c8bd124682d1ed9.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/src/system" 
+	@${RM} ${OBJECTDIR}/src/system/uart1.o.d 
+	@${RM} ${OBJECTDIR}/src/system/uart1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/uart1.c  -o ${OBJECTDIR}/src/system/uart1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/uart1.o.d"      -g -D__DEBUG   -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
 else
-${OBJECTDIR}/src/CNC_DriveControl_App.o: src/CNC_DriveControl_App.c  .generated_files/ba5a62257e2c4bd3eb899a58bbe92996a4f228b3.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/CNC_DriveControl_App.o: src/CNC_DriveControl_App.c  .generated_files/e4d2da1285103ce68278b76fc32bd458d164d3db.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src" 
 	@${RM} ${OBJECTDIR}/src/CNC_DriveControl_App.o.d 
 	@${RM} ${OBJECTDIR}/src/CNC_DriveControl_App.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/CNC_DriveControl_App.c  -o ${OBJECTDIR}/src/CNC_DriveControl_App.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/CNC_DriveControl_App.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/CNC_DriveControl_App.c  -o ${OBJECTDIR}/src/CNC_DriveControl_App.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/CNC_DriveControl_App.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/clock.o: src/system/clock.c  .generated_files/d734d0a1941ec2500a4ed2a040c023fa29af4640.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/submodules/SCI/Buffer.o: submodules/SCI/Buffer.c  .generated_files/f77352edfd328aca73b1afa4ddca1fda94ee1d84.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Buffer.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Buffer.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/Buffer.c  -o ${OBJECTDIR}/submodules/SCI/Buffer.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/Buffer.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/submodules/SCI/Datalink.o: submodules/SCI/Datalink.c  .generated_files/62099a5ef689c06cc561a9b437820a6f8179cf95.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Datalink.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Datalink.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/Datalink.c  -o ${OBJECTDIR}/submodules/SCI/Datalink.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/Datalink.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/submodules/SCI/Helpers.o: submodules/SCI/Helpers.c  .generated_files/75638d84bdb05b4092e40d9eede40468acf8c411.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Helpers.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/Helpers.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/Helpers.c  -o ${OBJECTDIR}/submodules/SCI/Helpers.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/Helpers.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/submodules/SCI/SCI.o: submodules/SCI/SCI.c  .generated_files/fb2661255d61da8393a08258d002473ed3e5df66.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/SCI.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/SCI.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/SCI.c  -o ${OBJECTDIR}/submodules/SCI/SCI.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/SCI.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/submodules/SCI/SCICommands.o: submodules/SCI/SCICommands.c  .generated_files/ebd3bb7454a62fcaaac867e52c1d12d3f06433d7.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/SCICommands.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/SCICommands.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/SCICommands.c  -o ${OBJECTDIR}/submodules/SCI/SCICommands.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/SCICommands.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/submodules/SCI/VarAccess.o: submodules/SCI/VarAccess.c  .generated_files/d2f66467e5d1c155faec72c7422542a838c32507.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/submodules/SCI" 
+	@${RM} ${OBJECTDIR}/submodules/SCI/VarAccess.o.d 
+	@${RM} ${OBJECTDIR}/submodules/SCI/VarAccess.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  submodules/SCI/VarAccess.c  -o ${OBJECTDIR}/submodules/SCI/VarAccess.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/submodules/SCI/VarAccess.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/src/system/clock.o: src/system/clock.c  .generated_files/d79e31c46387358709386a351eb5431a535ea6d3.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/clock.o.d 
 	@${RM} ${OBJECTDIR}/src/system/clock.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/clock.c  -o ${OBJECTDIR}/src/system/clock.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/clock.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/clock.c  -o ${OBJECTDIR}/src/system/clock.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/clock.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/interrupt_manager.o: src/system/interrupt_manager.c  .generated_files/3154e2b81bb20b4c1ea41b08f447a50e8b2c1715.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/interrupt_manager.o: src/system/interrupt_manager.c  .generated_files/cd7d3bc1116ce6b1a73c20bc04afc281e32858d7.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/interrupt_manager.o.d 
 	@${RM} ${OBJECTDIR}/src/system/interrupt_manager.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/interrupt_manager.c  -o ${OBJECTDIR}/src/system/interrupt_manager.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/interrupt_manager.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/interrupt_manager.c  -o ${OBJECTDIR}/src/system/interrupt_manager.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/interrupt_manager.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/mcc.o: src/system/mcc.c  .generated_files/d9272e74dbb831a599ec612a97d5ad4feaf23f1b.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/mcc.o: src/system/mcc.c  .generated_files/514598c60ae0585ff6008acbdf6a29d03d2244ca.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/mcc.o.d 
 	@${RM} ${OBJECTDIR}/src/system/mcc.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/mcc.c  -o ${OBJECTDIR}/src/system/mcc.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/mcc.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/mcc.c  -o ${OBJECTDIR}/src/system/mcc.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/mcc.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/pin_manager.o: src/system/pin_manager.c  .generated_files/71c0d67979a7991cd14ec423bedc92ab15d2fffa.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/pin_manager.o: src/system/pin_manager.c  .generated_files/81d71220aa02ec7af99c6149e9eb32ef3f19cf51.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/pin_manager.o.d 
 	@${RM} ${OBJECTDIR}/src/system/pin_manager.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/pin_manager.c  -o ${OBJECTDIR}/src/system/pin_manager.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/pin_manager.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/pin_manager.c  -o ${OBJECTDIR}/src/system/pin_manager.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/pin_manager.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/reset.o: src/system/reset.c  .generated_files/b56130ea077e4eb3a48126f44a4decd7bbdb7b81.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/reset.o: src/system/reset.c  .generated_files/e040272269e52101c9705b1c942cf4b6a8f4874a.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/reset.o.d 
 	@${RM} ${OBJECTDIR}/src/system/reset.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/reset.c  -o ${OBJECTDIR}/src/system/reset.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/reset.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/reset.c  -o ${OBJECTDIR}/src/system/reset.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/reset.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/system.o: src/system/system.c  .generated_files/eaae9a0c27fbd53c672db5c15e089fefa1efbd34.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/system.o: src/system/system.c  .generated_files/e66a23d6ecd350144595b236e0ec7ebc37aa9314.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/system.o.d 
 	@${RM} ${OBJECTDIR}/src/system/system.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/system.c  -o ${OBJECTDIR}/src/system/system.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/system.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/system.c  -o ${OBJECTDIR}/src/system/system.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/system.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/src/system/traps.o: src/system/traps.c  .generated_files/204b471e88e2949db730789488e283a211bb18f2.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+${OBJECTDIR}/src/system/traps.o: src/system/traps.c  .generated_files/98e9da1135835f1bbd0c39f55df7e88de5213a42.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
 	@${MKDIR} "${OBJECTDIR}/src/system" 
 	@${RM} ${OBJECTDIR}/src/system/traps.o.d 
 	@${RM} ${OBJECTDIR}/src/system/traps.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/traps.c  -o ${OBJECTDIR}/src/system/traps.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/traps.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/traps.c  -o ${OBJECTDIR}/src/system/traps.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/traps.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/src/system/uart1.o: src/system/uart1.c  .generated_files/8c205a9c34d95c0e5bef3f6348d12c124b8a6a9b.flag .generated_files/fcfce899a0ab15069a934fac85e808e120e313a8.flag
+	@${MKDIR} "${OBJECTDIR}/src/system" 
+	@${RM} ${OBJECTDIR}/src/system/uart1.o.d 
+	@${RM} ${OBJECTDIR}/src/system/uart1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  src/system/uart1.c  -o ${OBJECTDIR}/src/system/uart1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/src/system/uart1.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -O0 -msmart-io=1 -Wall -msfr-warn=off   -std=c99  -mdfp="${DFP_DIR}/xc16"
 	
 endif
 
@@ -211,12 +295,12 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -D__DEBUG=__DEBUG   -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system"  -mreserve=data@0x1000:0x101B -mreserve=data@0x101C:0x101D -mreserve=data@0x101E:0x101F -mreserve=data@0x1020:0x1021 -mreserve=data@0x1022:0x1023 -mreserve=data@0x1024:0x1027 -mreserve=data@0x1028:0x104F   -Wl,--local-stack,,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D__DEBUG=__DEBUG,,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST)  -mdfp="${DFP_DIR}/xc16" 
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -D__DEBUG=__DEBUG   -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI"  -mreserve=data@0x1000:0x101B -mreserve=data@0x101C:0x101D -mreserve=data@0x101E:0x101F -mreserve=data@0x1020:0x1021 -mreserve=data@0x1022:0x1023 -mreserve=data@0x1024:0x1027 -mreserve=data@0x1028:0x104F   -Wl,--local-stack,,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D__DEBUG=__DEBUG,,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST)  -mdfp="${DFP_DIR}/xc16" 
 	
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -Wl,--local-stack,,--defsym=__MPLAB_BUILD=1,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST)  -mdfp="${DFP_DIR}/xc16" 
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -o dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}      -mcpu=$(MP_PROCESSOR_OPTION)        -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -I"src/system" -I"submodules/SCI" -Wl,--local-stack,,--defsym=__MPLAB_BUILD=1,$(MP_LINKER_FILE_OPTION),--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--no-force-link,--smart-io,-Map="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map",--report-mem,--memorysummary,dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml$(MP_EXTRA_LD_POST)  -mdfp="${DFP_DIR}/xc16" 
 	${MP_CC_DIR}\\xc16-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/CNC_DriveControl_App.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX} -a  -omf=elf   -mdfp="${DFP_DIR}/xc16" 
 	
 endif

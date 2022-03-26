@@ -1,0 +1,3 @@
+[submodule "submodules/SCI"]
+	path = submodules/SCI
+	url = https://github.com/rholderried/SCI.git

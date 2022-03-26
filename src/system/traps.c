@@ -15,7 +15,7 @@
     This source file provides implementations for PIC24 / dsPIC33 / PIC32MM MCUs traps.
     Generation Information : 
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
-        Device            :  dsPIC33CH128MP508
+        Device            :  dsPIC33CH512MP508
     The generated drivers are tested against the following:
         Compiler          :  XC16 v1.70
         MPLAB             :  MPLAB X v5.50
@@ -79,7 +79,7 @@ void __attribute__((weak)) TRAPS_halt_on_error(uint16_t code)
 inline static void use_failsafe_stack(void)
 {
     static uint8_t failsafe_stack[32];
-    asm volatile (
+    __asm__ volatile (
         "   mov    %[pstack], W15\n"
         :
         : [pstack]"r"(failsafe_stack)

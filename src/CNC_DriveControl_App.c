@@ -46,6 +46,7 @@
   Section: Included Files
 */
 #include "system.h"
+#include "SCI.h"
 
 /*
                          Main application
@@ -54,6 +55,7 @@ int main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
+    
     while (1)
     {
         // Add your application code

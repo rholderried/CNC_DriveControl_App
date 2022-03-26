@@ -2,3 +2,6 @@ build
 debug
 .generated_files
 dist
+nbproject/private
+nbproject/*.mk
+.vscode

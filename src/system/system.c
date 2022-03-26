@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
-        Device            :  dsPIC33CH128MP508
+        Device            :  dsPIC33CH512MP508
     The generated drivers are tested against the following:
         Compiler          :  XC16 v1.70
         MPLAB             :  MPLAB X v5.50
@@ -63,23 +63,27 @@
 
 // FOSC
 #pragma config POSCMD = EC    //Primary Oscillator Mode Select bits->EC (External Clock) Mode
-#pragma config OSCIOFNC = ON    //OSC2 Pin Function bit->OSC2 is general purpose digital I/O pin
+#pragma config OSCIOFNC = OFF    //OSC2 Pin Function bit->OSC2 is clock output
 #pragma config FCKSM = CSECMD    //Clock Switching Mode bits->Clock switching is enabled,Fail-safe Clock Monitor is disabled
-#pragma config PLLKEN = PLLKEN_ON    //PLLKEN->reserved as PLLKEN_ON
+#pragma config PLLKEN = PLLKEN_ON    //PLL Lock Status Control->PLL lock signal will be used to disable PLL clock output if lock is lost
 #pragma config XTCFG = G3    //XT Config->24-32 MHz crystals
 #pragma config XTBST = ENABLE    //XT Boost->Boost the kick-start
 
 // FWDT
-#pragma config RWDTPS = PS1048576    //Run Mode Watchdog Timer Post Scaler select bits->1:1048576
+#pragma config RWDTPS = PS1    //Run Mode Watchdog Timer Post Scaler select bits->1:1
 #pragma config RCLKSEL = LPRC    //Watchdog Timer Clock Select bits->Always use LPRC
 #pragma config WINDIS = OFF    //Watchdog Timer Window Enable bit->Watchdog Timer in Window mode
 #pragma config WDTWIN = WIN25    //Watchdog Timer Window Select bits->WDT Window is 25% of WDT period
-#pragma config SWDTPS = PS1048576    //Sleep Mode Watchdog Timer Post Scaler select bits->1:1048576
+#pragma config SWDTPS = PS1    //Sleep Mode Watchdog Timer Post Scaler select bits->1:1
 #pragma config FWDTEN = ON_SW    //Watchdog Timer Enable bit->WDT controlled via SW, use WDTCON.ON bit
 
+// FPOR
+#pragma config BISTDIS = DISABLED    //Memory BIST Feature Disable->mBIST on reset feature disabled
+
 // FICD
-#pragma config ICS = PGD1    //ICD Communication Channel Select bits->Communicate on PGC1 and PGD1
+#pragma config ICS = PGD2    //ICD Communication Channel Select bits->Communicate on PGC2 and PGD2
 #pragma config JTAGEN = OFF    //JTAG Enable bit->JTAG is disabled
+#pragma config NOBTSWP = OFF    //BOOTSWP instruction disable bit->BOOTSWP instruction is disabled
 
 // FDMTIVTL
 #pragma config DMTIVTL = 0    //Dead Man Timer Interval low word->0
@@ -187,20 +191,33 @@
 #pragma config CPRE14 = MSTR    //Pin RE14 Ownership Bits->Master core owns pin.
 #pragma config CPRE15 = MSTR    //Pin RE15 Ownership Bits->Master core owns pin.
 
+// FBTSEQ
+#pragma config BSEQ = 4095    //Relative value defining which partition will be active after devie Reset; the partition containing a lower boot number will be active.->4095
+#pragma config IBSEQ = 4095    //The one's complement of BSEQ; must be calculated by the user and written during device programming.->4095
+
+// FBOOT
+#pragma config BTMODE = SINGLE    //Device Boot Mode Configuration->Device is in Single Boot (legacy) mode
+
 #include "pin_manager.h"
 #include "clock.h"
 #include "system.h"
 #include "system_types.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "uart1.h"
+#include "SCI.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    INTERRUPT_Initialize();
     CLOCK_Initialize();
+    INTERRUPT_Initialize();
     INTERRUPT_GlobalEnable();
     SYSTEM_CORCONModeOperatingSet(CORCON_MODE_PORVALUES);
+
+    // Initialize the UART1 periphery
+    UART1_Initialize8N1(2000000, 180000000, true);
+    UART1_setReceiver(receiveData);
 }
 
 /**

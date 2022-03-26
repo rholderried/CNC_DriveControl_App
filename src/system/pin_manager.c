@@ -16,7 +16,7 @@
     This source file provides implementations for PIN MANAGER.
     Generation Information :
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
-        Device            :  dsPIC33CH128MP508
+        Device            :  dsPIC33CH512MP508
     The generated drivers are tested against the following:
         Compiler          :  XC16 v1.70
         MPLAB 	          :  MPLAB X v5.50
@@ -72,7 +72,7 @@ void PIN_MANAGER_Initialize (void)
      ***************************************************************************/
     TRISA = 0x001F;
     TRISB = 0xFFFD;
-    TRISC = 0xFFFF;
+    TRISC = 0xF7FF;
     TRISD = 0xFFFF;
     TRISE = 0xFFFF;
 
@@ -103,8 +103,19 @@ void PIN_MANAGER_Initialize (void)
      * Setting the Analog/Digital Configuration SFR(s)
      ***************************************************************************/
     ANSELA = 0x001F;
-    ANSELB = 0x008C;
-    ANSELC = 0x008F;
-    ANSELD = 0x0400;
+    ANSELB = 0x0384;
+    ANSELC = 0x00CF;
+    ANSELD = 0x7C00;
+    ANSELE = 0x0040;
+
+    /****************************************************************************
+     * Set the PPS
+     ***************************************************************************/
+    __builtin_write_RPCON(0x0000); // unlock PPS
+
+    RPINR18bits.U1RXR = 0x003A;    //RC10->UART1:U1RX
+    RPOR13bits.RP59R = 0x0001;    //RC11->UART1:U1TX
+
+    __builtin_write_RPCON(0x0800); // lock PPS
 }
 

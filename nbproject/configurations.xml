@@ -4,7 +4,28 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="SCI" displayName="SCI" projectFiles="true">
+        <itemPath>submodules/SCI/Buffer.h</itemPath>
+        <itemPath>submodules/SCI/CommandStucture.h</itemPath>
+        <itemPath>submodules/SCI/DataLink.h</itemPath>
+        <itemPath>submodules/SCI/Helpers.h</itemPath>
+        <itemPath>submodules/SCI/SCI.h</itemPath>
+        <itemPath>submodules/SCI/SCICommands.h</itemPath>
+        <itemPath>submodules/SCI/SCIconfig.h</itemPath>
+        <itemPath>submodules/SCI/Variables.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="system" displayName="system" projectFiles="true">
+        <itemPath>src/system/clock.h</itemPath>
+        <itemPath>src/system/interrupt_manager.h</itemPath>
+        <itemPath>src/system/mcc.h</itemPath>
+        <itemPath>src/system/pin_manager.h</itemPath>
+        <itemPath>src/system/reset.h</itemPath>
+        <itemPath>src/system/reset_types.h</itemPath>
+        <itemPath>src/system/system.h</itemPath>
+        <itemPath>src/system/system_types.h</itemPath>
+        <itemPath>src/system/traps.h</itemPath>
+        <itemPath>src/system/watchdog.h</itemPath>
+        <itemPath>src/system/uart1.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -14,6 +35,14 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="SCI" displayName="SCI" projectFiles="true">
+        <itemPath>submodules/SCI/Buffer.c</itemPath>
+        <itemPath>submodules/SCI/Datalink.c</itemPath>
+        <itemPath>submodules/SCI/Helpers.c</itemPath>
+        <itemPath>submodules/SCI/SCI.c</itemPath>
+        <itemPath>submodules/SCI/SCICommands.c</itemPath>
+        <itemPath>submodules/SCI/VarAccess.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="system" displayName="system" projectFiles="true">
         <itemPath>src/system/clock.c</itemPath>
         <itemPath>src/system/interrupt_manager.c</itemPath>
@@ -22,6 +51,7 @@
         <itemPath>src/system/reset.c</itemPath>
         <itemPath>src/system/system.c</itemPath>
         <itemPath>src/system/traps.c</itemPath>
+        <itemPath>src/system/uart1.c</itemPath>
       </logicalFolder>
       <itemPath>src/CNC_DriveControl_App.c</itemPath>
     </logicalFolder>
@@ -29,18 +59,18 @@
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
-      <itemPath>CNC_DriveControlApp_config.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>src/system</Elem>
+    <Elem>submodules/SCI</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <targetDevice>dsPIC33CH128MP508</targetDevice>
+        <targetDevice>dsPIC33CH512MP508</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pk4hybrid</platformTool>
@@ -66,6 +96,10 @@
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
         <subordinates>
+          <score>
+            <scdebug>false</scdebug>
+            <scname>S1</scname>
+          </score>
         </subordinates>
       </compileType>
       <makeCustomizationType>
@@ -117,6 +151,7 @@
         <property key="scalar-model" value="default"/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
+        <appendMe value="-std=c99"/>
       </C30>
       <C30-AR>
         <property key="additional-options-chop-files" value="false"/>
@@ -190,7 +225,7 @@
         <property key="warn-section-align" value="false"/>
       </C30-LD>
       <C30Global>
-        <property key="common-include-directories" value="src\system"/>
+        <property key="common-include-directories" value="src\system;submodules\SCI"/>
         <property key="dual-boot-partition" value="0"/>
         <property key="fast-math" value="false"/>
         <property key="generic-16-bit" value="false"/>
@@ -204,6 +239,31 @@
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
       </C30Global>
+      <PKOBSKDEPlatformTool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-15eff"/>
+        <property key="memories.userotp" value="true"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges" value=""/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges"
+                  value="${memories.eedata.default}"/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.usehighvoltageonmclr" value="false"/>
+        <property key="programoptions.uselvpprogramming" value="true"/>
+      </PKOBSKDEPlatformTool>
       <pk4hybrid>
         <property key="ADC" value="true"/>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -266,7 +326,9 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-15eff"/>
         <property key="memories.rww" value="true"/>
-        <property key="poweroptions.powerenable" value="false"/>
+        <property key="poweroptions.powerenable" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/roman/Git/CNC_DriveControl_App/debug/default/default_ptg"/>
         <property key="programmerToGoImageName" value="default_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
@@ -294,7 +356,7 @@
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
-        <property key="voltagevalue" value="3.25"/>
+        <property key="voltagevalue" value="3.3"/>
       </pk4hybrid>
     </conf>
   </confs>
