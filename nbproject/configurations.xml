@@ -11,8 +11,8 @@
         <itemPath>submodules/SCI/Helpers.h</itemPath>
         <itemPath>submodules/SCI/SCI.h</itemPath>
         <itemPath>submodules/SCI/SCICommands.h</itemPath>
-        <itemPath>submodules/SCI/SCIconfig.h</itemPath>
         <itemPath>submodules/SCI/Variables.h</itemPath>
+        <itemPath>submodules/SCI/SCIconfig.h</itemPath>
       </logicalFolder>
       <logicalFolder name="system" displayName="system" projectFiles="true">
         <itemPath>src/system/clock.h</itemPath>
@@ -26,6 +26,9 @@
         <itemPath>src/system/traps.h</itemPath>
         <itemPath>src/system/watchdog.h</itemPath>
         <itemPath>src/system/uart1.h</itemPath>
+        <itemPath>src/system/dee.h</itemPath>
+        <itemPath>src/system/flash.h</itemPath>
+        <itemPath>src/system/flash_hardware.h</itemPath>
       </logicalFolder>
       <itemPath>src/DataAndControl.h</itemPath>
     </logicalFolder>
@@ -53,6 +56,9 @@
         <itemPath>src/system/system.c</itemPath>
         <itemPath>src/system/traps.c</itemPath>
         <itemPath>src/system/uart1.c</itemPath>
+        <itemPath>src/system/dee.c</itemPath>
+        <itemPath>src/system/flash.c</itemPath>
+        <itemPath>src/system/flash_asm.s</itemPath>
       </logicalFolder>
       <itemPath>src/CNC_DriveControl_App.c</itemPath>
       <itemPath>src/DataAndControl.c</itemPath>
@@ -81,7 +87,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="dsPIC33CH-MP_DFP" vendor="Microchip" version="1.6.186"/>
+        <pack name="dsPIC33CH-MP_DFP" vendor="Microchip" version="1.10.223"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -115,7 +121,7 @@
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
       <C30>
-        <property key="code-model" value="default"/>
+        <property key="code-model" value="large-code"/>
         <property key="const-model" value="default"/>
         <property key="data-model" value="default"/>
         <property key="disable-instruction-scheduling" value="false"/>
@@ -329,8 +335,6 @@
         <property key="memories.programmemory.ranges" value="0-15eff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="true"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/roman/Git/CNC_DriveControl_App/debug/default/default_ptg"/>
         <property key="programmerToGoImageName" value="default_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
@@ -346,7 +350,7 @@
                   value="${memories.dataflash.default}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value=""/>
-        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value="57800-57EFF"/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
