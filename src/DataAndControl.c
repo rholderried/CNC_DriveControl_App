@@ -65,14 +65,14 @@ bool readEEPROM(uint32_t *pui32_val, uint16_t ui16_address)
 /******************************************************************************
  * Command Function definitions
  *****************************************************************************/
-bool helloWorld(uint32_t* ui32_valArray, uint8_t ui8_valArrayLen)
+COMMAND_CB_STATUS helloWorld(uint32_t* ui32_valArray, uint8_t ui8_valArrayLen, PROCESS_INFO *p_info)
 {
     if (ui8_valArrayLen > 1)
         ui16_testvar = ui32_valArray[1];
     else if (ui8_valArrayLen > 0)
         ui16_testvar = ui32_valArray[0];
 
-    return true;
+    return eCOMMAND_STATUS_SUCCESS;
 }
 
 /******************************************************************************
