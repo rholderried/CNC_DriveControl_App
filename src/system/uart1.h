@@ -8,8 +8,8 @@
  *      - 2020-04-02 - File creation
  *                     
  ***********************************************************************************/
-#ifndef _UART1_H
-#define _UART1_H
+#ifndef _UART1_H_
+#define _UART1_H_
 
 
 /************************************************************************************
@@ -47,4 +47,4 @@ void UART1_setReceiver(RECEIVE_CB targetCB);
     }
 #endif
 
-#endif //_UART1_H
+#endif //_UART1_H_

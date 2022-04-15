@@ -29,7 +29,7 @@
         <itemPath>src/system/dee.h</itemPath>
         <itemPath>src/system/flash.h</itemPath>
         <itemPath>src/system/flash_hardware.h</itemPath>
-        <itemPath>src/system/sccp1_tmr.h</itemPath>
+        <itemPath>src/system/sccp1.h</itemPath>
       </logicalFolder>
       <itemPath>src/DataAndControl.h</itemPath>
     </logicalFolder>
@@ -60,7 +60,7 @@
         <itemPath>src/system/dee.c</itemPath>
         <itemPath>src/system/flash.c</itemPath>
         <itemPath>src/system/flash_asm.s</itemPath>
-        <itemPath>src/system/sccp1_tmr.c</itemPath>
+        <itemPath>src/system/sccp1.c</itemPath>
       </logicalFolder>
       <itemPath>src/CNC_DriveControl_App.c</itemPath>
       <itemPath>src/DataAndControl.c</itemPath>
@@ -85,7 +85,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool></platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>1.50</languageToolchainVersion>
+        <languageToolchainVersion>1.70</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

@@ -5,3 +5,5 @@ dist
 nbproject/private
 nbproject/*.mk
 .vscode
+*.properties
+*.bash

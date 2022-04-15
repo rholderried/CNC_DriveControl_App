@@ -206,6 +206,7 @@
 #include "traps.h"
 #include "uart1.h"
 #include "SCI.h"
+#include "sccp1.h"
 
 void SYSTEM_Initialize(void)
 {
@@ -218,6 +219,7 @@ void SYSTEM_Initialize(void)
     // Initialize the UART1 periphery
     UART1_initialize8N1(2000000, 180000000, true);
     UART1_setReceiver(SCI_receiveData);
+    SCCP1_Initialize();
 }
 
 /**
