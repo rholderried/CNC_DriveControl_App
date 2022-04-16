@@ -52,6 +52,8 @@ typedef struct
 /**\brief SCCP1 gets used as dual timer, the secondary timer is to be initialized*/
 void SCCP1_Initialize(void);
 
+void SCCP1_SetCallbacks(tTIMERCB primeTmrCb, tTIMERCB secTmrCb);
+
 void SCCP1_TMR_Start( void );
 
 void SCCP1_TMR_Stop( void );

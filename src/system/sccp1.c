@@ -74,6 +74,13 @@ void SCCP1_Initialize(void)
 }
 
 //=============================================================================
+void SCCP1_SetCallbacks(tTIMERCB primeTmrCb, tTIMERCB secTmrCb)
+{
+    sSCCP1.primeTmrCb = primeTmrCb;
+    sSCCP1.secTmrCb = secTmrCb;
+}
+
+//=============================================================================
 void SCCP1_Start( void )
 {
     /* Start the Timer */

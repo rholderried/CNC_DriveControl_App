@@ -1,3 +1,6 @@
 [submodule "submodules/SCI"]
 	path = submodules/SCI
 	url = https://github.com/rholderried/SCI.git
+[submodule "submodules/Datalogger"]
+	path = submodules/Datalogger
+	url = https://github.com/rholderried/Datalogger.git

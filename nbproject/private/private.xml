@@ -4,10 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/roman/Git/CNC_DriveControl_App/submodules/SCI/SCI.c</file>
+            <file>file:/C:/Users/roman/Git/CNC_DriveControl_App/src/system/sccp1.h</file>
             <file>file:/C:/Users/roman/Git/CNC_DriveControl_App/submodules/SCI/Datalink.c</file>
             <file>file:/C:/Users/roman/Git/CNC_DriveControl_App/src/CNC_DriveControl_App.c</file>
+            <file>file:/C:/Users/roman/Git/CNC_DriveControl_App/src/system/sccp1.c</file>
             <file>file:/C:/Users/roman/Git/CNC_DriveControl_App/src/DataAndControl.c</file>
+            <file>file:/C:/Users/roman/Git/CNC_DriveControl_App/submodules/SCI/Helpers.h</file>
             <file>file:/C:/Users/roman/Git/CNC_DriveControl_App/src/system/system.c</file>
+            <file>file:/C:/Users/roman/Git/CNC_DriveControl_App/submodules/SCI/SCICommands.c</file>
         </group>
     </open-files>
 </project-private>
