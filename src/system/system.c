@@ -207,6 +207,7 @@
 #include "uart1.h"
 #include "SCI.h"
 #include "sccp1.h"
+#include "gpTimer32Bit.h"
 
 void SYSTEM_Initialize(void)
 {
@@ -219,7 +220,10 @@ void SYSTEM_Initialize(void)
     // Initialize the UART1 periphery
     UART1_initialize8N1(2000000, 180000000, true);
     UART1_setReceiver(SCI_receiveData);
+    // Initialize the secondary Timer of SCCP1 module for the general purpose timer
     SCCP1_Initialize();
+    SCCP1_SetCallbacks(NULL, timer32BitExecute);
+    SCCP1_TMR_Start();
 }
 
 /**

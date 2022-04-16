@@ -81,7 +81,7 @@ void SCCP1_SetCallbacks(tTIMERCB primeTmrCb, tTIMERCB secTmrCb)
 }
 
 //=============================================================================
-void SCCP1_Start( void )
+void SCCP1_TMR_Start( void )
 {
     /* Start the Timer */
     CCP1CON1Lbits.CCPON = true;

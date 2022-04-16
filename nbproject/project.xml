@@ -15,6 +15,7 @@
             <sourceRootList>
                 <sourceRootElem>submodules/SCI</sourceRootElem>
                 <sourceRootElem>src</sourceRootElem>
+                <sourceRootElem>submodules/Datalogger</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

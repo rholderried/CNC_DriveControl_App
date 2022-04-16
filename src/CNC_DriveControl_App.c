@@ -18,10 +18,17 @@
 #include "system.h"
 #include "SCI.h"
 #include "DataAndControl.h"
+#include "Datalogger.h"
+#include "gpTimer32Bit.h"
 #include "uart1.h"
 #include "dee.h"
 
-//extern VAR varStruct[];
+void testTimerCb (void)
+{
+  uint8_t *text = "Timer Hallo Welt";
+
+  UART1_writeBlocking(text, 16);
+}
 
 /************************************************************************************
  * Main Application
@@ -31,8 +38,6 @@ int main(void)
     
     // initialize the device
     SYSTEM_Initialize();
-
-    
 
     // Initializing the EEPROM and the Serial Communication Interface
     {
@@ -49,6 +54,12 @@ int main(void)
       
       // Initialize the Serial Communication Interface
       SCI_init(cbs, &varStruct[0], &cmdStruct[0]);
+    }
+
+    // Initializing the general purpose Timer module for the Datalogger
+    {
+
+
     }
 
     

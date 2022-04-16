@@ -164,10 +164,10 @@ int8_t appendTimer32Bit (tTIMERVAR32 *sTimerConf)
  ***********************************************************************************/
 void timer32BitDestruct (uint8_t ui8Index)
 {
-    // Index freimachen
+    // Free the index
     sTimerCtl.ui32FreeIndices |= (1 << ui8Index);
 
-    // Timer aktiv zur�cksetzen
+    // Reset timer activation
     timer32BitSetActive(ui8Index, false);
 }
 

@@ -4,6 +4,13 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="common" displayName="common" projectFiles="true">
+        <itemPath>src/common/gpTimer32Bit.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="Datalogger" displayName="Datalogger" projectFiles="true">
+        <itemPath>submodules/Datalogger/Datalogger.h</itemPath>
+        <itemPath>submodules/Datalogger/DataloggerConfig.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="SCI" displayName="SCI" projectFiles="true">
         <itemPath>submodules/SCI/Buffer.h</itemPath>
         <itemPath>submodules/SCI/CommandStucture.h</itemPath>
@@ -40,6 +47,12 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="common" displayName="common" projectFiles="true">
+        <itemPath>src/common/gpTimer32Bit.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="Datalogger" displayName="Datalogger" projectFiles="true">
+        <itemPath>submodules/Datalogger/Datalogger.c</itemPath>
+      </logicalFolder>
       <logicalFolder name="SCI" displayName="SCI" projectFiles="true">
         <itemPath>submodules/SCI/Buffer.c</itemPath>
         <itemPath>submodules/SCI/Datalink.c</itemPath>
@@ -74,6 +87,7 @@
   <sourceRootList>
     <Elem>submodules/SCI</Elem>
     <Elem>src</Elem>
+    <Elem>submodules/Datalogger</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -83,7 +97,7 @@
         <targetDevice>dsPIC33CH512MP508</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool></platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.70</languageToolchainVersion>
         <platform>3</platform>
@@ -235,7 +249,8 @@
         <property key="warn-section-align" value="false"/>
       </C30-LD>
       <C30Global>
-        <property key="common-include-directories" value="src\system;submodules\SCI"/>
+        <property key="common-include-directories"
+                  value="src\system;submodules\SCI;src\common;submodules\Datalogger"/>
         <property key="dual-boot-partition" value="0"/>
         <property key="fast-math" value="false"/>
         <property key="generic-16-bit" value="false"/>
