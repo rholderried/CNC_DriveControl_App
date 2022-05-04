@@ -25,7 +25,7 @@
 
 void testTimerCb (void)
 {
-  uint8_t *text = "Timer Hallo Welt";
+  char *text = "Timer Hallo Welt";
 
   UART1_writeBlocking(text, 16);
 }

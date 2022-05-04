@@ -19,6 +19,7 @@
 #include "Variables.h"
 #include "CommandStucture.h"
 #include "SCIconfig.h"
+#include "DataloggerSCI.h"
 #include "dee.h"
 //#include "DataAndControl.h"
 
@@ -110,4 +111,13 @@ COMMAND_CB_STATUS helloWorld2(uint32_t* ui32_valArray, uint8_t ui8_valArrayLen, 
  * Command Structure definition
  *****************************************************************************/
 const COMMAND_CB cmdStruct[SIZE_OF_CMD_STRUCT] = 
-{helloWorld, helloWorld2};
+{   GetDataloggerVersion, 
+    RegisterLogFromVarStruct,  
+    InitializeDatalogger,
+    StartDatalogger,
+    StopDatalogger,
+    GetLogData,
+    GetChannelInfo,
+    ResetDatalogger,
+    helloWorld, 
+    helloWorld2};

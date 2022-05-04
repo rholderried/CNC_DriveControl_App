@@ -9,7 +9,7 @@
       </logicalFolder>
       <logicalFolder name="Datalogger" displayName="Datalogger" projectFiles="true">
         <itemPath>submodules/Datalogger/Datalogger.h</itemPath>
-        <itemPath>submodules/Datalogger/DataloggerConfig.h</itemPath>
+        <itemPath>submodules/Datalogger/DataloggerSCI.h</itemPath>
       </logicalFolder>
       <logicalFolder name="SCI" displayName="SCI" projectFiles="true">
         <itemPath>submodules/SCI/Buffer.h</itemPath>
@@ -19,7 +19,6 @@
         <itemPath>submodules/SCI/SCI.h</itemPath>
         <itemPath>submodules/SCI/SCICommands.h</itemPath>
         <itemPath>submodules/SCI/Variables.h</itemPath>
-        <itemPath>submodules/SCI/SCIconfig.h</itemPath>
       </logicalFolder>
       <logicalFolder name="system" displayName="system" projectFiles="true">
         <itemPath>src/system/clock.h</itemPath>
@@ -39,6 +38,8 @@
         <itemPath>src/system/sccp1.h</itemPath>
       </logicalFolder>
       <itemPath>src/DataAndControl.h</itemPath>
+      <itemPath>src/SCIconfig.h</itemPath>
+      <itemPath>src/DataloggerConfig.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -52,6 +53,7 @@
       </logicalFolder>
       <logicalFolder name="Datalogger" displayName="Datalogger" projectFiles="true">
         <itemPath>submodules/Datalogger/Datalogger.c</itemPath>
+        <itemPath>submodules/Datalogger/DataloggerSCI.c</itemPath>
       </logicalFolder>
       <logicalFolder name="SCI" displayName="SCI" projectFiles="true">
         <itemPath>submodules/SCI/Buffer.c</itemPath>
@@ -250,13 +252,13 @@
       </C30-LD>
       <C30Global>
         <property key="common-include-directories"
-                  value="src\system;submodules\SCI;src\common;submodules\Datalogger"/>
+                  value="src\system;submodules\SCI;src\common;submodules\Datalogger;src"/>
         <property key="dual-boot-partition" value="0"/>
         <property key="fast-math" value="false"/>
         <property key="generic-16-bit" value="false"/>
         <property key="legacy-libc" value="true"/>
         <property key="mpreserve-all" value="false"/>
-        <property key="oXC16glb-macros" value=""/>
+        <property key="oXC16glb-macros" value="SCI"/>
         <property key="omit-pack-options" value="1"/>
         <property key="output-file-format" value="elf"/>
         <property key="preserve-all" value="false"/>
