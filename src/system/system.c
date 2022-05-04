@@ -221,6 +221,7 @@ void SYSTEM_Initialize(void)
     UART1_initialize8N1(2000000, 180000000, true);
     UART1_setReceiver(SCI_receiveData);
     // Initialize the secondary Timer of SCCP1 module for the general purpose timer
+    // 1 kHz Timer
     SCCP1_Initialize();
     SCCP1_SetCallbacks(NULL, timer32BitExecute);
     SCCP1_TMR_Start();

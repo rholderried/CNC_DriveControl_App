@@ -69,7 +69,8 @@ void SCCP1_Initialize(void)
       
 
     // Enabling SCCP1 interrupt.
-    IEC0bits.CCT1IE = 1;
+    // IEC0bits.CCT1IE = 1;
+    IEC0bits.CCP1IE = 1;
 
 }
 

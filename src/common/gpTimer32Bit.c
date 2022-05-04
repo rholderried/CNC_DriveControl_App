@@ -72,21 +72,27 @@ void timer32BitExecute (void)
         /****************************************************************************
          * Handle the Counter value
          ***************************************************************************/
-        if (pTimer->bUpCounter &&
-                (pTimer->ui32TimerVal < pTimer->ui32ResetValue))
+        if (pTimer->bUpCounter)
         {
-            pTimer->ui32TimerVal++;
-
+            if (pTimer->ui32TimerVal < pTimer->ui32ResetValue)
+                pTimer->ui32TimerVal++;
+            
             if (pTimer->ui32TimerVal == pTimer->ui32ResetValue)
+            {
                 bTimerFinished = true;
+                pTimer->ui32TimerVal = 0;
+            }
         }
-        else if (!pTimer->bUpCounter &&
-                    (pTimer->ui32TimerVal > 0))
+        else
         {
-            pTimer->ui32TimerVal--;
+            if (pTimer->ui32TimerVal > 0)
+                pTimer->ui32TimerVal--;
 
             if (pTimer->ui32TimerVal == 0)
+            {
                 bTimerFinished = true;
+                pTimer->ui32TimerVal = pTimer->ui32ResetValue;
+            }
         }
         /****************************************************************************
          * Handle the action on timer finished

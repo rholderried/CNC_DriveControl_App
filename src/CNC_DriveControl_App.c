@@ -25,9 +25,9 @@
 
 void testTimerCb (void)
 {
-  char *text = "Timer Hallo Welt";
+  char *text = "Timer Hallo Welt\r\n";
 
-  UART1_writeBlocking(text, 16);
+  UART1_writeBlocking(text, 18);
 }
 
 /************************************************************************************
@@ -58,8 +58,12 @@ int main(void)
 
     // Initializing the general purpose Timer module for the Datalogger
     {
-
-
+      tTIMERVAR32 tmp = tTIMERVAR32_DEFAULTS;
+      // Configure this timer for 10 Hz operation
+      tmp.ui32ResetValue = 1000;
+      tmp.pfnTimer_cb = testTimerCb;
+      
+      timer32BitSetActive(appendTimer32Bit(&tmp), true);
     }
 
     
